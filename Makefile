@@ -54,8 +54,11 @@ publish-version: tag-version ## Publish the `{version}` taged container to ECR
 	@echo 'publish $(VERSION) to $(DOCKER_REPO)'
 	docker push $(DOCKER_REPO)/$(APP_NAME):$(VERSION)
 
+install-deps: ## Install platform Dependencies
+	yarn install
+
 run-ci: ## Run Tests and compile coverage
-	@echo 'Run CI'
+	yarn test
 
 # Docker tagging
 tag: tag-latest tag-version ## Generate container tags for the `{version}` ans `latest` tags

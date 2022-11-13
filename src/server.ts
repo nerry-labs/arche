@@ -27,7 +27,6 @@ export class Server {
     }
 
     setupControllers(): void {
-        console.log('here')
         // Register Controllers
         const Controllers: Array<BaseController> = [
         ]
